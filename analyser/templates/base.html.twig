@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link href="/static/apex/styles.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Navigation</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link align-middle px-0">
+                            <span class="ms-1 d-none d-sm-inline">Main</span>
+                        </a>
+                    </li>
+                    {% for number, table in tables %}
+                    <li class="nav-item">
+                        <a href="{{ path('table', {number: number}) }}"  class="nav-link px-0 align-middle">
+                           <span class="ms-1 d-none d-sm-inline">Table {{ number }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                    {% for number, figure in figures %}
+                        <li class="nav-item">
+                            <a href="{{ path('figure', {number: number}) }}"  class="nav-link px-0 align-middle">
+                                <span class="ms-1 d-none d-sm-inline">Figure {{ number }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                    {% for letter, appendix in appendices %}
+                        <li class="nav-item">
+                            <a href="{{ path('appendix', {letter: letter}) }}"  class="nav-link px-0 align-middle">
+                                <span class="ms-1 d-none d-sm-inline">Appendix {{ letter }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="col py-3">
+            {% block body %}{% endblock %}
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>

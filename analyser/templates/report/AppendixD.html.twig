@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+
+        <div class="row">
+            <div class="col-12">
+                <p>Table 6. Grouping criterion for the names of popular skills.</p>
+                <table class="table">
+                    <tr>
+                        <th>Group</th>
+                        <th>Skills</th>
+                    </tr>
+                    {% for key, collection in data %}
+                        {% for item in collection %}
+                            <tr>
+                                {% if loop.index0 == 0 %}<td rowspan="{{ collection|length }}">{{ key }}</td>{% endif %}
+                                <td>{{ item }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+{% endblock %}

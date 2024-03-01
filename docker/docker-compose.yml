@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+  db:
+    container_name: research.psql
+    image: postgres:alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    logging:
+      driver: "none"
+    volumes:
+      - ../data/postgres:/var/lib/postgresql/data
+
+  nginx:
+    container_name: research.nginx
+    image: nginx:alpine
+    ports:
+      - "8083:8080"
+    volumes:
+      - ../analyser/:/var/www/app:cached
+      - ./container/nginx/servers/:/etc/nginx/conf.d/
+    links:
+      - php
+    depends_on:
+      - php
+
+
+  php:
+    container_name: research.php
+    build: ./container/fpm
+    volumes:
+      - ../analyser/:/var/www/app:cached
+      - ../data/:/var/www/data
+    links:
+      - db
+    working_dir:
+      /var/www/app

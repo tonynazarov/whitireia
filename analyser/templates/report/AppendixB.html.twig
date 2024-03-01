@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-hover">
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Limitations</th>
+                    </tr>
+                    <tr>
+                        <td>source_id</td>
+                        <td>The unique identifier for the advert on a specific source</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>source</td>
+                        <td>Resource name</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Country (iso-3166 alpha-2)</td>
+                        <td>The code of the country from which the information was taken</td>
+                        <td>EURES defines vacancies by language, but is not built, so for some of the collected
+                            vacancies
+                            the code is
+                            displayed eu
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>Job title</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>description</td>
+                        <td>Job description</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>posted_at</td>
+                        <td>Estimated publication date</td>
+                        <td> Some resources provide a publication date, which may vary depending on the version of the
+                            ad.
+                            In some cases
+                            this
+                            information may not be available for some listings.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>stage</td>
+                        <td>The iteration number (1,2,3)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>company</td>
+                        <td>Company that published a job vacancy</td>
+                        <td>May be absent for some jobs, in particular for freelance exchanges</td>
+                    </tr>
+                    <tr>
+                        <td>contract_type/employment_type</td>
+                        <td>Type of contract and hours</td>
+                        <td>May be absent</td>
+                    </tr>
+                    <tr>
+                        <td>location</td>
+                        <td>Country/City indicated the advertisement</td>
+                        <td>May be absent</td>
+                    </tr>
+                    <tr>
+                        <td>industry</td>
+                        <td>Industry indicated in the advertisement</td>
+                        <td>May be absent</td>
+                    </tr>
+                    <tr>
+                        <td>link</td>
+                        <td>A link to the job page</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+{% endblock %}

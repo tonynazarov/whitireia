@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-4">
+            <div class="row">
+                <div class="col-12">
+                    <p style="font-weight: bold">Documentation</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Specification: Python3, ChromeDriver, Selenium, PHP8.2, Symfony 6.4, PostgreSQL, Docker
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr>
+                    <p style="font-weight: bold">Docker</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            make up
+                        </li>
+                        <li class="list-group-item">
+                            make down
+                        </li>
+                        <li class="list-group-item">
+                            make restart
+                        </li>
+                        <li class="list-group-item">
+                            make ps
+                        </li>
+                        <li class="list-group-item">
+                            make php
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr>
+                    <p style="font-weight: bold">PHP & Composer</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            composer install
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr>
+                    <p style="font-weight: bold">Data samples</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            {root_dir}/datasamples.tar.gz
+                        </li>
+                        <li class="list-group-item">
+                            {root_dir}/result.csv
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr>
+                    <p style="font-weight: bold">Sources</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Upwork</li>
+                        <li class="list-group-item">Indeed</li>
+                        <li class="list-group-item">Seek</li>
+                        <li class="list-group-item">Jobsora</li>
+                        <li class="list-group-item">Adzuna</li>
+                        <li class="list-group-item">Catho.com.br</li>
+                        <li class="list-group-item">HH.ru</li>
+                        <li class="list-group-item">JobStreet</li>
+                        <li class="list-group-item">JobsDB</li>
+                        <li class="list-group-item">EURES</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr>
+                    <p style="font-weight: bold">Stages</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">02.10.2023</li>
+                        <li class="list-group-item">01.11.2023</li>
+                        <li class="list-group-item">02.12.2023</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <p style="font-weight: bold">Figures</p>
+            <ul class="list-group">
+                {% for figure, value in figures %}
+                    <li class="list-group-item"><a
+                                href="{{ path('figure', {number: figure}) }}">Figure {{ figure }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <p style="font-weight: bold">Tables</p>
+                <ul class="list-group">
+                    {% for table, value in tables %}
+                        <li class="list-group-item"><a href="{{ path('table', {number: table}) }}">Table {{ table }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="row">
+                <p style="font-weight: bold">Appendices</p>
+                <ul class="list-group">
+                    {% for appendix, value in appendices %}
+                        <li class="list-group-item"><a
+                                    href="{{ path('appendix', {letter: appendix}) }}">Appendices {{ appendix }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
