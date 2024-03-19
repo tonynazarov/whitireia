@@ -8,17 +8,19 @@ readonly class Figure80 extends Figure
 {
     protected function getTitle(): string
     {
-        return 'Figure 80. The distribution of ChatGPT mentions vacancies from countries on Job Sources.';
+        return 'Figure 80. Mention of Programming Languages among vacancies in the context of the specified skills (Job services).';
     }
 
     protected function getSql(): string
     {
         $sql = <<<EOL
-SELECT country, count(DISTINCT source_id) as count
-FROM source_jobs
-GROUP BY country
-ORDER BY count desc
-LIMIT 30
+SELECT title as skill, count(DISTINCT job_source_id) as related_job_count
+FROM source_job_skills
+WHERE title in
+      ('Python', 'PHP', 'TypeScript', 'JavaScript', 'Java', 'C#', 'C++', 'VisualBasic', 'SQL', 'Scratch', 'Go',
+       'Fortran', 'Delphi', 'Pascal', 'Assembly', 'Swift', 'Kotlin', 'Ruby', 'Rust', 'COBOL', 'Kotlin', 'MATLAB')
+GROUP BY skill
+ORDER BY related_job_count desc
 EOL;
 
         return $sql;
@@ -37,7 +39,7 @@ EOL;
                 ],
                 'plotOptions' => [
                     'bar' => [
-                        'horizontal' => false,
+                        'horizontal' => true,
                     ]
                 ],
                 'xaxis'       => [

@@ -4,40 +4,30 @@ declare(strict_types=1);
 
 namespace App\Report;
 
-readonly class Figure93 extends Figure
+use App\Entity\JobSource;
+
+readonly class Figure85b extends Figure
 {
     protected function getTitle(): string
     {
-        return 'Figure 93. The comparison of the number of users mentioned ChatGPT skill in their profile and the number of jobs related to ChatGPT on the Upwork.';
+        return 'Figure 85b. Distribution of vacancies by job keywords for headings in Latin font without grouping by unique value.';
     }
 
     protected function getSql(): string
     {
-        return "";
+        return '';
     }
 
     protected static function transformOptions(array $data, string $title): string
     {
-        foreach ($data as $stage) {
-            $users[] = $stage['users_total'];
-            $jobs[] = $stage['jobs_total'];
-        }
-
         return json_encode([
                 'chart'       => [
                     'type' => 'bar',
                 ],
                 'series'      => [
                     [
-                        'data' => $users ?? [0]
-                    ],
-                    [
-                        'data' => $jobs ?? [0]
-                    ],
-
-                ],
-                'legend' => [
-                    'show' => false
+                        'data' => array_values($data)
+                    ]
                 ],
                 'plotOptions' => [
                     'bar' => [
@@ -58,8 +48,37 @@ readonly class Figure93 extends Figure
 
     public function __invoke(): array
     {
-        $data = $this->getEntityManager()->getConnection()->executeQuery('SELECT created_at::date, users_total, jobs_total FROM upwork_users')->fetchAllAssociativeIndexed();
+        $titles = [
+            'Engineer',
+            'Intern',
+            'Content',
+            'Developer',
+            'Manager',
+            'Specialist',
+            'Expert',
+            'Scientist',
+            'Coordinator',
+            'Executive',
+            'Designer',
+            'Assistant',
+            'Representative',
+            'Analyst',
+            'Associate',
+            'Director',
+            'Recruiter',
+            'Architect',
+            'Marketer',
+            'Consultant',
+            'Researcher',
+            'QA'
+        ];
 
+        foreach ($titles as $title) {
+            $value        = $this->getEntityManager()->getRepository(JobSource::class)->getTitleCountsForLatin($title, 3)[0]['c'];
+            $data[$title] = (int)$value;
+        }
+
+        arsort($data);
         $title = $this->getTitle();
 
         return [

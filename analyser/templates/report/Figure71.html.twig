@@ -9,9 +9,6 @@
 
             <script>
                 let options = {{ options|raw }};
-                options.dataLabels = {
-                    formatter: (val, {seriesIndex, w}) => w.config.series[seriesIndex] // <--- HERE
-                }
                 let chart = new ApexCharts(document.querySelector("#chart"), options);
                 chart.render();
             </script>

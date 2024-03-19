@@ -28,66 +28,68 @@ class JobSourceRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('ju')->getQuery()->toIterable();
     }
 
-    public function getTitleCountsForLatinHavingGT(string $title, int $gt)
+    public function getTitleCountsHavingGT(array $titles, int $gt)
     {
         $rsm = new ResultSetMapping();
         $rsm->addScalarResult('c', 'c');
 
-        $sql = <<<EOL
-SELECT SUM(c.jobs) as c
+        $sql = <<<SQL
+SELECT SUM(a.c) as c
 FROM (
-    SELECT title, count(*) jobs FROM source_jobs
-    WHERE title ~* '\A[A-Za-z0-9 ]*\Z'
-    AND
-    title ILIKE ?
+    SELECT count(DISTINCT (source_id)) c FROM jobs
+    WHERE 
+    lower(title) SIMILAR TO ?
     GROUP BY title
-    HAVING count(*) > ?) c
-EOL;
+    HAVING count(*) > ?) a
+SQL;
+
+        $titles = '%('.implode('|', $titles).')%';
 
         $query = $this->getEntityManager()->createNativeQuery($sql, $rsm);
-        $query->setParameter(1, '%' . $title . '%');
+        $query->setParameter(1, $titles);
         $query->setParameter(2, $gt);
 
         return $query->getResult();
     }
 
-    public function getTitleCountsForLatin(string $title)
-    {
-        $rsm = new ResultSetMapping();
-        $rsm->addScalarResult('c', 'c');
-
-        $sql = <<<EOL
-SELECT SUM(a.count) as c
-FROM (
-    SELECT count(*) FROM source_jobs
-    WHERE title ~* '\A[A-Za-z0-9 ]*\Z'
-    AND
-    title ILIKE ? ) a
-
-EOL;
-
-        $query = $this->getEntityManager()->createNativeQuery($sql, $rsm);
-        $query->setParameter(1, '%' . $title . '%');
-
-        return $query->getResult();
-    }
-
-
-    public function getTitleCountsForAll(string $title)
+    public function getTitleCountsForAll(array $titles)
     {
         $rsm = new ResultSetMapping();
         $rsm->addScalarResult('c', 'c');
         $rsm->addScalarResult('t', 't');
 
-        $sql = <<<EOL
+        $sql = <<<SQL
+    SELECT count(DISTINCT (source_id)) as c FROM jobs
+    WHERE  lower(title) SIMILAR TO ?
+SQL;
+
+        $titles = '%('.implode('|', $titles).')%';
+        $query = $this->getEntityManager()->createNativeQuery($sql, $rsm);
+        $query->setParameter(1, $titles);
+
+        return $query->getResult();
+    }
+
+    public function getTitleCountsForLatin(array $titles)
+    {
+        $rsm = new ResultSetMapping();
+        $rsm->addScalarResult('c', 'c');
+
+        $sql = <<<SQL
 SELECT SUM(a.count) as c
 FROM (
-    SELECT count(*) FROM source_jobs
-    WHERE title ILIKE ? ) a
-EOL;
+    SELECT count(*) FROM jobs
+    WHERE 
+        title ~* '\A[A-Za-z0-9 ]*\Z'
+    AND
+        lower(title) SIMILAR TO ? ) a
+
+SQL;
+
+        $titles = '%('.implode('|', $titles).')%';
 
         $query = $this->getEntityManager()->createNativeQuery($sql, $rsm);
-        $query->setParameter(1, '%' . $title . '%');
+        $query->setParameter(1, $titles);
 
         return $query->getResult();
     }

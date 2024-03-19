@@ -8,47 +8,36 @@ readonly class Figure88 extends Figure
 {
     protected function getTitle(): string
     {
-        return 'Figure 88. The trend of ChatGPT-related skills among the job descriptions for Job Services.';
+        return 'Figure 88. The comparison of the number of users mentioned ChatGPT skill in their profile and the number of jobs related to ChatGPT on the Upwork.';
     }
 
     protected function getSql(): string
     {
-        $sql = <<<EOL
-SELECT title as skill, count(DISTINCT job_source_id) as related_job_count
-FROM source_job_skills
-WHERE title in
-      (
-       'Agent GPT',
-       'GPT-4 API',
-       'GPT-4 Developer',
-       'ChatGPT API Integration',
-       'GPT-Neo',
-       'GPT Chatbot',
-       'GPT API',
-       'GPT-4',
-       'GPT-3',
-       'ChatGPT Prompt',
-       'GPT-J',
-       'Auto-GPT',
-       'GPT-3.5'
-          )
-GROUP BY skill
-ORDER BY related_job_count desc
-EOL;
-
-        return $sql;
+        return "";
     }
 
     protected static function transformOptions(array $data, string $title): string
     {
+        foreach ($data as $stage) {
+            $users[] = $stage['users_total'];
+            $jobs[] = $stage['jobs_total'];
+        }
+
         return json_encode([
                 'chart'       => [
                     'type' => 'bar',
                 ],
                 'series'      => [
                     [
-                        'data' => array_values($data)
-                    ]
+                        'data' => $users ?? [0]
+                    ],
+                    [
+                        'data' => $jobs ?? [0]
+                    ],
+
+                ],
+                'legend' => [
+                    'show' => false
                 ],
                 'plotOptions' => [
                     'bar' => [
@@ -69,8 +58,8 @@ EOL;
 
     public function __invoke(): array
     {
-        $data = $this->execute();
-        arsort($data);
+        $data = $this->getEntityManager()->getConnection()->executeQuery('SELECT created_at::date, users_total, jobs_total FROM upwork_users')->fetchAllAssociativeIndexed();
+
         $title = $this->getTitle();
 
         return [

@@ -17,20 +17,23 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">ChatGPT related skill</th>
-                    <th scope="col">Number of jobs</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Users</th>
+                    <th scope="col">Jobs</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for key,value in data %}
                     <tr>
                         <td>{{ key }}</td>
-                        <td>{{ value }}</td>
+                        <td>{{ value.users_total }}</td>
+                        <td>{{ value.jobs_total }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
         </div>
+
     </div>
 {% endblock %}
 

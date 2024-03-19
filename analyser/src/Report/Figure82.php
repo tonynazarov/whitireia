@@ -8,17 +8,64 @@ readonly class Figure82 extends Figure
 {
     protected function getTitle(): string
     {
-        return 'Figure 82. Mention of large language models among vacancies in the context of the specified skills (Job Services).';
+        return 'Figure 82. Mention of AI-related technologies among vacancies in the context of the specified skills (Job Services).';
     }
 
     protected function getSql(): string
     {
         $sql = <<<EOL
-SELECT title as skill, count(job_source_id) as related_job_count
+SELECT title as skill, count(DISTINCT job_source_id) as related_job_count
 FROM source_job_skills
 WHERE title in
-      ('GPT-4', 'GPT-3', 'GPT-3.5', 'LLaMA', 'Llama 2', 'GPT-J', 'LaMDA', 'BERT', 'Claude', 'Falcon 40B', 'BLOOM',
-       'Bard', 'GPT-Neo')
+      ('CycleGAN',
+            'Machine Learning',
+            'ChatGPT Prompt',
+            'ChatGPT API Integration',
+            'Artificial Intelligence',
+            'Natural Language Processing',
+            'Prompt Engineering',
+            'Artificial Neural Network',
+            'Neural Network',
+            'Machine Learning Model',
+            'OpenAI Embeddings',
+            'LLM Prompt Engineering',
+            'LLM Prompt',
+            'Model Tuning',
+            'AI Text-to-Image',
+            'AI Text-to-Speech',
+            'GPT Chatbot',
+            'OpenAI Codex',
+            'NLP Tokenization',
+            'Generative AI Prompt',
+            'Generative AI Prompt Engineering',
+            'Prompt Engineering',
+            'Stable Diffusion Prompt',
+            'OpenAI Codex Prompt',
+            'LLM Prompt Engineering',
+            'Image Prompt Engineering',
+            'LLM Prompt',
+            'Midjourney Prompt',
+            'Chatbot Prompt',
+            'Image Prompt',
+            'ChatGPT Prompt',
+            'Machine Learning Framework',
+            'Machine Translation',
+            'Azure Machine Learning',
+            'Machine Learning Model',
+            'Machine Learning',
+            'Generative AI',
+            'Generative AI Prompt',
+            'Generative AI Prompt Engineering',
+            'Generative AI Software',
+            'Generative Adversarial Network',
+            'Generative Design',
+            'Generative Model',
+            'Deep Learning',
+            'Machine Learning Framework',
+            'Apache OpenNLP',
+            'CogCompNLP',
+            'NLP Tokenization',
+            'Stanford CoreNLP')
 GROUP BY skill
 ORDER BY related_job_count desc
 EOL;
@@ -45,7 +92,7 @@ EOL;
                 'xaxis'       => [
                     'categories' => array_keys($data)
                 ],
-                'title' => [
+                'title'       => [
                     'align'    => 'left',
                     'floating' => false,
                     'text'     => $title,

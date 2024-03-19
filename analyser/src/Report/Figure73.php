@@ -10,67 +10,85 @@ readonly class Figure73 extends Figure
     protected function group(): array
     {
         return [
-            'Content'        => [
-                'Content Writing', 'Writing', 'Article Writing', 'Blog Content', 'Data Entry', 'Copywriting', 'Blog Writing', 'Creative Writing', 'Email Communication', 'Article', 'Video Editing', 'Social Media Content Creation', 'Social Media Content', 'Proofreading', 'Content Creation', 'Ghostwriting', 'Website Content', 'Editing & Proofreading', 'Video Production', 'Fact-Checking', 'Content SEO', 'Technical Writing', 'Product Listings', 'Video Post-Editing', 'Explainer Video', 'Ad Copy', 'Copy Editing', 'Ebook Writing', 'Email Support', 'Communication Skills', 'List Building', '    Audio Editing', 'Social Media Imagery', 'Product Description', 'Email Copywriting', 'Video Commercial', 'Business Writing', 'Documentary', 'Photo Editing', 'Content Strategy', 'Video Intro & Outro', 'User Profile Creation', 'Media & Entertainment', 'Nonfiction', 'Content Editing', 'Content Rewriting', 'English', 'Translation', 'French', 'German'
+            'Software Development'        => [
+                'IDE', 'Script', 'Unity', 'Git', 'Bot', 'Software', 'API', 'Python', 'Java', 'SQL', 'Scala', 'iOS', 'Automation', 'Database', 'GIS', 'Testing', 'SaaS', 'JavaScript', 'React', 'HTML', 'Docker', 'Software Development', 'GitHub', 'TypeScript', 'CSS', 'PyTorch', 'Algorithms', 'TensorFlow', 'DevOps', 'Chatbot', 'PHP', 'Kubernetes', 'Server', 'WordPress', 'Search Engine', 'Linux', 'CI/CD', 'MySQL', 'Game', 'Web Service', 'Code Review', 'HubSpot', 'C++', 'Information Technology', 'JSON', 'XML', 'Computer Vision', 'Terraform', 'C#', 'EJS', 'Web Development', 'Web Application', 'Notion', 'Prototype', 'Node.js', 'Microsoft Azure', 'Android', 'Containerization', 'PostgreSQL', 'Angular', 'MongoDB', 'Scripting', 'Ruby', 'Version Control', 'Ecommerce', 'Redis', 'Vue.js', 'Quality Assurance', 'Elasticsearch', 'Open Source', 'MLOps', 'Swift', 'REST API', 'Jenkins', 'Django', 'Laravel', 'Web3', 'pandas', 'GitLab', 'Mobile App', 'Google Cloud Platform', 'Kotlin', 'Next.js', 'Marketing Automation', 'Migration', 'Flask', 'Sass', 'Cloud Computing', 'Jasper', 'HTML5', 'RESTful API', 'Prototyping', 'Ruby on Rails', 'Software Architecture', 'Data Modeling', 'Zapier', 'NumPy', 'GPT API', 'Technical SEO', 'Spring Boot', 'Web Application Development', 'Blockchain', 'Flutter', 'GraphQL', 'NoSQL Database', 'Performance Optimization', 'Software Design', 'Azure App Service', 'A/B Testing', 'API Development', 'Azure DevOps', 'AI Development', 'Robotic Process Automation', 'jQuery', 'Scripting Language'
             ],
-            'Development'    => [
-                'Python', 'JavaScript', 'Web Development', 'WordPress', 'Automation', 'Chatbot Development', 'PHP', 'Web Application', 'HTML', 'Node.js', 'React', 'CSS', 'Data Scraping', 'Zapier', 'Chatbot', 'Landing Page', 'Bot Development', 'iOS', 'LangChain', 'Scripting', 'Android', 'Mobile App Development', 'Scriptwriting', 'AI App Development', 'Data Mining', 'API Development', 'Amazon Web Services', 'TypeScript', 'Java', 'MySQL', 'HTML5', 'Django', 'Bubble.io', 'Ecommerce', 'TensorFlow', 'Airtable', 'Prototyping', 'RESTful API', 'AI Development', 'SQL', 'Tech & IT', 'MongoDB', 'iOS Development', 'OpenAI Embeddings', 'AI Agent Development', 'Data Extraction', 'Marketing Automation', 'Conversational AI', 'Database Development', 'GPT API', 'Google Chrome Extension', 'Database', 'WooCommerce', 'Laravel', 'Next.js', 'PostgreSQL', 'Chat & Messaging Software', 'WordPress Plugin', 'Script', 'Android App Development', 'Google Cloud Platform', 'AI Builder', 'SaaS', 'PyTorch', 'Integromat', 'Python Script', 'Webflow', 'Firebase', 'Azure OpenAI Service', 'React Native', 'C#', 'Web Scraping', 'Flutter', 'Software Architecture & Design', 'OpenAI Codex', 'jQuery', 'HubSpot', 'Desktop Application', 'Software', 'Computer Vision', 'Scrapy', 'Swift', 'JSON', 'Database Architecture', 'Microsoft Azure', 'Ecommerce Website Development', 'DevOps', 'Unity', 'Amazon FBA', 'C++', 'Elementor', 'Angular', 'AngularJS', 'User Authentication', 'API', 'ChatGPT API Integration', 'API Integration', 'AI Model Integration', 'GPT-4 API', 'Twilio API', 'Email Automation'
+            'Business'           => [
+                'Business', 'Business Plan', 'Business Intelligence', 'White Paper'
             ],
-            'AI'             => [
-                'AI Content Writing', 'AI Text-to-Speech', 'Artificial Intelligence', 'Machine Learning', 'Natural Language Processing', 'AI Content Creation', 'AI Chatbot', 'GPT-4', 'Deep Learning', 'AI Bot', 'Generative AI', 'Midjourney AI', 'Artificial Neural Network', 'Large Language Model', 'LLM Prompt Engineering', 'Bard', 'DALL-E', 'Neural Network', 'Machine Learning Model', 'GPT-3', 'Llama 2', 'LLaMA', 'Stable Diffusion', 'GPT-4 Developer', 'BERT', 'GPT Chatbot', 'AI Text-to-Image',
+            'Marketing'          => [
+                'Market Research', 'Marketing', 'Strategy', 'Digital Marketing', 'Google Analytics', 'SAS', 'Email Marketing', 'Branding', 'Content Marketing', 'Landing Page', 'Google Ads', 'Customer Engagement', 'Lead Generation', 'Social Media Marketing', 'Mailchimp', 'Email Campaign', 'Marketing Strategy', 'Search Engine Optimization', 'Product Marketing', 'SMM', 'Infographic', 'Google Tag Manager', 'Cold Calling', 'Strategic Plan', 'Intercom'
             ],
-            'Assistance'     => [
-                'Virtual Assistance',
-                'Presentations'
+            'Communication'      => [
+                'Communication Skills', 'Communications', 'Interpersonal Skills', 'Relationship Management', 'Public Relations'
             ],
-            'Administrative' => [
-                'Administrative Support'
+            'Software'               => [
+                'CAD', 'Canva', 'Figma', 'Adobe Photoshop', 'Google', 'Ebook', 'Microsoft Office', 'Google Search', 'Google Workspace', 'Google Docs', 'Microsoft Excel', 'Google Sheets', 'Office 365', 'Google Suite'
             ],
-            'Marketing'      => [
-                'Search Engine Optimization', 'SEO Writing', 'Social Media Marketing', 'Social Media Management', 'Marketing Strategy', 'SEO Keyword Research', 'Customer Service', 'Digital Marketing', 'Email Marketing', 'Market Research', 'Google Analytics', 'On-Page SEO', 'SEO Backlinking', 'Google Ads', 'Email Campaign Setup', 'Facebook Advertising', 'Influencer Marketing', 'Internet Marketing', 'Social Media Advertising', 'SEO Content', 'Research & Strategy', 'Content Marketing Strategy', 'Sales & Marketing', 'Marketing', 'Facebook Ads Manager', 'Organic Traffic Growth', 'Off-Page SEO', 'Company Research', 'Social Media Marketing Strategy', 'Content Marketing', 'SEO Audit', 'Campaign Optimization',
+            'Content'            => [
+                'Report', 'Writing', 'Blog', 'Article', 'Documentation', 'Content Creation', 'Presentations', 'Copywriting', 'Content Management', 'Video Editing', 'Google Search Console', 'Content Strategy', 'Data Management', 'Content Management System', 'Social Media Content', 'Content Writing', 'Typing', 'Content Development', 'Proofreading', 'Копирайтинг', 'Website Content', 'Technical Writing', 'Narrative', 'Data Collection', 'English', 'Data Processing', 'Japanese', 'Content Calendar', 'Looker', 'Polish', 'Competitive Analysis', 'Text Analytics', 'English', 'German', 'French', 'Spanish', 'Translation', 'Chinese'
             ],
-            'Design'         => [
-                'Graphic Design', 'Web Design', 'Canva', 'Adobe Photoshop', 'Adobe Illustrator', 'Adobe Premiere Pro', 'Adobe After Effects', 'Figma', 'Website Redesign', 'Mockup', 'Responsive Design', 'Wireframing', 'UX & UI', 'Illustration', 'Presentation Design', 'User Interface Design',
+            'Health'             => [
+                'Health', 'Healthcare'
             ],
-            'Prompting'      => [
-                'ChatGPT Prompt', 'Prompt Engineering', 'LLM Prompt', 'Model Tuning', 'Midjourney Prompt', 'Model Optimization'
+            'Analysis'           => [
+                'Analytics', 'Data Analysis', 'Big Data', 'Statistics', 'Data Analytics', 'Data Visualization', 'Data Engineering'
             ],
-            'Social media'   => [
-                'Instagram', 'Facebook', 'LinkedIn', 'Social Media Account Setup', 'TikTok', 'YouTube', 'Twitter', 'WhatsApp'
+            'AI'                 => [
+                'Generative AI', 'Machine Learning', 'Artificial Intelligence', 'Large Language Model', 'Bard', 'Natural Language Processing', 'Deep Learning', 'LangChain', 'LLaMA', 'BERT', 'DALL-E', 'GitHub Copilot', 'Machine Learning Model', 'GPT-4', 'Conversational AI', 'Stable Diffusion', 'Keras', 'AI Chatbot', 'Neural Network', 'GPT-3'
             ],
-            'Sales'          => [
-                'Dropshipping', 'Communications', 'Shopify', 'Lead Generation', 'Sales', 'Real Estate', 'Cold Calling', 'Customer Satisfaction', 'AI Consulting', 'Appointment Setting'
+            'Sales'              => [
+                'Customer Service', 'Sales', 'Customer Experience', 'Salesforce', 'Customer Support', 'Customer Satisfaction', 'Real Estate', 'Shopify'
             ],
-            'Tools'          => [
-                'Google Sheets', 'Microsoft Word', 'Microsoft Excel', 'Google Docs', 'Google Workspace', 'Ebook', 'File Management', 'Smartphone', 'File Maintenance'
+            'Design'             => [
+                'User Experience', 'Graphic Design', 'Animation'
             ],
-            'Management'     => [
-                'Scheduling', 'Project Management', 'Campaign Management', 'Notion', 'Technical SEO', 'Light Project Management', 'Time Management', 'Content Management', 'Task Coordination', 'PPC Campaign Setup & Management', 'CRM Automation', 'Customer Relationship Management',
+            'Education'          => [
+                'Education', 'Mathematics', 'Educational', 'Webinar', 'History', 'Reinforcement Learning', 'Training Session', 'Philosophy'
             ],
-            'Analysis'       => [
-                'Market Analysis', 'Data Science', 'Data Analysis', 'Statistics', 'Competitive Analysis', 'Data Visualization', 'Infographic'
+            'Law'                => [
+                'Law',
+                'Legal',
             ],
-            'Support'        => [
-                'Executive Support', 'Customer Support', 'Online Chat Support', 'Phone Support'
+            'Science' => [
+                'Computer Science','Data Science','Genetics'
             ],
-            'Administration' => ['Personal Administration'],
-            'Education'      => ['Education', 'Topic Research', 'Academic Writing', 'Research Methods'],
-            'Accounting'     => ['Accounting'],
-            'Health'         => ['Health & Fitness', 'Health & Wellness'],
-            'Finance'        => ['Financial Analysis'],
+            'Architecture'       => ['Architecture'],
+            'HR'                 => [
+                'CV', 'Resume', 'Recruiting', 'Cover Letter', 'Human Resources', 'Job Posting'
+            ],
+            'Management'         => [
+                'Project Management', 'Management Skills', 'Scrum', 'Slack', 'Product Management', 'Jira', 'Business Development', 'Time Management', 'Product Roadmap', 'Process Improvement', 'Project Plans', 'Trello', 'Asana', 'Team Building', 'Team Management', 'Account Management'
+            ],
+            'Social Networks'    => [
+                'LinkedIn', 'Facebook', 'Instagram', 'YouTube', 'Twitter', 'TikTok', 'Social Media Management', 'WhatsApp', 'Podcast', 'Pinterest'
+            ],
+            'Finance'            => [
+                'Finance', 'Financial Planning', 'Economics', 'GAAP', 'Financial Model'
+            ],
+            'Crypto'             => ['NFT'],
+            'Prompt Engineering' => ['Prompt Engineering'],
+            'Accounting'         => [
+                'Accounting', 'Accounts Payable'
+            ],
+            'Sports'             => ['Sports'],
+            'Journalism'         => ['Journalism'],
+            'Support'            => ['Technical Support', 'Zendesk']
+
         ];
+
     }
 
     protected function getTitle(): string
     {
-        return 'Figure 73. Distribution of top 300 skills by groups (number of jobs) for Upwork.';
+        return 'Figure 73. The distribution of top 300 skills by groups (number of skills) for Job Services.';
     }
 
     protected function getSql(): string
     {
         return <<<EOL
-SELECT title, count(DISTINCT upwork_job_skills.job_upwork_id) AS count
-FROM upwork_job_skills
+SELECT title, count(DISTINCT source_job_skills.job_source_id) AS count
+FROM source_job_skills
 WHERE title in ('{titles}')
 GROUP BY title
 ORDER BY count DESC
@@ -84,37 +102,33 @@ EOL;
     {
         return json_encode([
             'chart'       => [
-                'type' => 'donut',
+                'type' => 'bar',
             ],
-            'labels'      => array_keys($data),
-            'series'      => array_values($data),
+            'series'      => [
+                [
+                    'data' => array_values($data)
+                ]
+            ],
+            'plotOptions' => [
+                'bar' => [
+                    'horizontal' => true,
+                ]
+            ],
+            'xaxis'       => [
+                'categories' => array_keys($data)
+            ],
             'title'       => [
                 'align'    => 'left',
                 'floating' => false,
                 'text'     => $title,
             ],
-            'plotOptions' => [
-                'pie' => [
-                    'donut' => [
-                        'labels' => [
-                            'show'  => true,
-                            'name'  => [
-                                'show' => true,
-                            ],
-                            'total' => [
-                                'show' => true,
-                            ]
-                        ]
-                    ]
-                ]
-            ]
         ]);
     }
 
     private static function transformToAmountOfSkills(array &$data): void
     {
         foreach ($data as &$value) {
-            $value = array_sum($value);
+            $value = count($value);
         }
     }
 

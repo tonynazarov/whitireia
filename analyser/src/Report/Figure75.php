@@ -6,124 +6,56 @@ namespace App\Report;
 
 readonly class Figure75 extends Figure
 {
-
-    protected function group(): array
-    {
-        return [
-            'Development'      => ['IDE', 'Script', 'Unity', 'Git', 'Bot', 'Software', 'API', 'Python', 'Java', 'SQL', 'Scala', 'iOS'],
-            'Business'         => ['Business'],
-            'Marketing'        => [
-                'Marketing',
-                'Strategy',
-            ],
-            'Communication'    => ['Communication Skills'],
-            'Tool'             => [
-                'Google',
-                'CAD',
-            ],
-            'Content'          => [
-                'Report',
-                'Writing',
-                'Blog',
-                'English',
-            ],
-            'Health'           => [
-                'Health',
-            ],
-            'Analytics'        => [
-                'Analytics'
-            ],
-            'AI'               => [
-                'Generative AI',
-                'Machine Learning'
-            ],
-            'Sales'            => [
-                'Sales'
-            ],
-            'Computer Science' => [
-                'Science'
-            ],
-            'Education'        => [
-                'Education'
-            ],
-            'Law'              => [
-                'Law'
-            ],
-            'Architecture'     => [
-                'Architecture'
-            ]
-        ];
-    }
-
     protected function getTitle(): string
     {
-        return 'Figure 75. The distribution of top 30 skills by groups (number of skills) for Job Services.';
+        return 'Figure 75. The distribution of ChatGPT mentions vacancies from countries on Upwork.';
     }
 
     protected function getSql(): string
     {
-        return <<<EOL
-SELECT title, count(DISTINCT source_job_skills.job_source_id) AS count
-FROM source_job_skills
-WHERE title in ('{titles}')
+        $sql = <<<EOL
+SELECT title, count(DISTINCT job_upwork_id) as count
+FROM upwork_locations
 GROUP BY title
-ORDER BY count DESC
+ORDER BY count desc
 LIMIT 30
-
 EOL;
 
+        return $sql;
     }
 
     protected static function transformOptions(array $data, string $title): string
     {
         return json_encode([
-            'chart'       => [
-                'type' => 'donut',
-            ],
-            'labels'      => array_keys($data),
-            'series'      => array_values($data),
-            'title'       => [
-                'align'    => 'left',
-                'floating' => false,
-                'text'     => $title,
-            ],
-            'plotOptions' => [
-                'pie' => [
-                    'donut' => [
-                        'labels' => [
-                            'show'  => true,
-                            'name'  => [
-                                'show' => true,
-                            ],
-                            'total' => [
-                                'show' => true,
-                            ]
-                        ]
+                'chart'       => [
+                    'type' => 'bar',
+                ],
+                'series'      => [
+                    [
+                        'data' => array_values($data)
                     ]
-                ]
+                ],
+                'plotOptions' => [
+                    'bar' => [
+                        'horizontal' => false,
+                    ]
+                ],
+                'xaxis'       => [
+                    'categories' => array_keys($data)
+                ],
+                'title' => [
+                    'align'    => 'left',
+                    'floating' => false,
+                    'text'     => $title,
+                ],
             ]
-        ]);
-    }
-
-    private static function transformToAmountOfSkills(array &$data): void
-    {
-        foreach ($data as &$value) {
-            $value = count($value);
-        }
+        );
     }
 
     public function __invoke(): array
     {
-
-        foreach ($this->group() as $name => $group) {
-            $sql = strtr($this->getSql(), ['{titles}' => implode("','", $group)]);
-
-            $data[$name] = $this->getEntityManager()->getConnection()->executeQuery($sql)->fetchAllKeyValue();
-        }
-
-        self::transformToAmountOfSkills($data);
+        $data = $this->execute();
         arsort($data);
-
         $title = $this->getTitle();
 
         return [

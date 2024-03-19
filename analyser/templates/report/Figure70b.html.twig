@@ -17,23 +17,20 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">Source</th>
-                    <th scope="col">Users</th>
-                    <th scope="col">Jobs</th>
+                    <th scope="col">Group</th>
+                    <th scope="col">Share of skills</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for key,value in data %}
                     <tr>
                         <td>{{ key }}</td>
-                        <td>{{ value.users_total }}</td>
-                        <td>{{ value.jobs_total }}</td>
+                        <td>{{ value }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
         </div>
-
     </div>
 {% endblock %}
 

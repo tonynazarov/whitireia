@@ -8,7 +8,7 @@ readonly class Figure83 extends Figure
 {
     protected function getTitle(): string
     {
-        return 'Figure 83. Mention of Programming Languages among vacancies in the context of the specified skills (Upwork).';
+        return 'Figure 83. The trend of ChatGPT-related skills among the job descriptions for Upwork.';
     }
 
     protected function getSql(): string
@@ -17,8 +17,21 @@ readonly class Figure83 extends Figure
 SELECT title as skill, count(DISTINCT job_upwork_id) as related_job_count
 FROM upwork_job_skills
 WHERE title in
-      ('Python', 'PHP', 'TypeScript', 'JavaScript', 'Java', 'C#', 'C++', 'C', 'VisualBasic', 'SQL', 'Scratch', 'Go',
-       'Fortran', 'Delphi', 'Pascal', 'Assembly', 'Swift', 'Kotlin', 'Ruby', 'Rust', 'COBOL', 'Kotlin', 'MATLAB')
+      (
+       'Agent GPT',
+       'GPT-4 API',
+       'GPT-4 Developer',
+       'ChatGPT API Integration',
+       'GPT-Neo',
+       'GPT Chatbot',
+       'GPT API',
+       'GPT-4',
+       'GPT-3',
+       'ChatGPT Prompt',
+       'GPT-J',
+       'Auto-GPT',
+       'GPT-3.5'
+          )
 GROUP BY skill
 ORDER BY related_job_count desc
 EOL;
@@ -45,7 +58,7 @@ EOL;
                 'xaxis'       => [
                     'categories' => array_keys($data)
                 ],
-                'title' => [
+                'title'       => [
                     'align'    => 'left',
                     'floating' => false,
                     'text'     => $title,
