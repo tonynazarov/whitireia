@@ -1,3 +1,5 @@
+import csv
+
 from src.sources.adzuna.adzuna import parse as parse_adzuna
 from src.sources.cathocombr.cathocombr import parse as parse_cathocombr
 from src.sources.eures.eures import parse as parse_eures
@@ -8,7 +10,6 @@ from src.sources.seek.seek import parse as parse_seek
 from src.sources.seekjobsdb.seekjobsdb import parse as parse_jobsdb
 from src.sources.seekjobstreet.seekjobstreet import parse as parse_jobstreet
 from src.sources.upwork.upwork import parse as upwork_parse
-import csv
 
 folders = {
     1: '20231002',

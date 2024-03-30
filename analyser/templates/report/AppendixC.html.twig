@@ -3,23 +3,32 @@
 
 {% block body %}
 
-        <div class="row">
-            <div class="col-12">
-                <p>Table 5. Grouping criteria for popular job titles.</p>
-                <table class="table">
+    <div class="row">
+        <div class="col-12">
+            <p>Table 6. Grouping criteria for popular job titles.</p>
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th>Group Title</th>
+                    <th>Search Keyword</th>
+                    <th>Job Titles</th>
+                </tr>
+                {% for key, collection in data %}
                     <tr>
-                        <th>Group</th>
-                        <th>Job titles</th>
+                        <td>{{ collection['groupName'] }}</td>
+                        <td>
+                            {% if collection['searchKeyword'] is iterable %}
+                                {% for word in collection['searchKeyword'] %}
+                                    {{ word }},<br>
+                                {% endfor %}
+                            {% else %}
+                                {{ item }}
+                            {% endif %}
+                        </td>
+                        <td>{% if collection['jobTitles'] is iterable %}{% for word in collection['jobTitles'] %}{{ word }},
+                                <br>{% endfor %}{% else %}{{ item }}{% endif %}</td>
                     </tr>
-                    {% for key, collection in data %}
-                        {% for item in collection %}
-                            <tr>
-                                {% if loop.index0 == 0 %}<td rowspan="{{ collection|length }}">{{ key }}</td>{% endif %}
-                                <td>{{ item }}</td>
-                            </tr>
-                        {% endfor %}
-                    {% endfor %}
-                </table>
-            </div>
+                {% endfor %}
+            </table>
         </div>
+    </div>
 {% endblock %}

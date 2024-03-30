@@ -10,71 +10,333 @@ readonly class AppendixC
     {
         return [
             'Engineer'         => [
-                'Engineer', 'Machine Learning Engineer', 'Data Engineer', 'Prompt Engineer', 'Devops Engineer', 'Automation Engineer', 'Multidisciplinary Prompt Engineer', 'Datacenter Product Development Engineer', 'Compiler Engineer', 'Malware Research Engineer', 'Generative  Engineer', 'Quality Assurance Engineer', 'Founding Engineer', 'Cyber Systems Engineer', 'Engineer Ii', 'Head Of Engineering', 'Embedded  Engineer', 'Azure Support Engineer', 'Developer Engineer In Test'
+                'groupName'     => 'Engineer',
+                'searchKeyword' => [
+                    'Engineer',
+                ],
+                'jobTitles'     => [
+                    'Engineer',
+                    'Machine Learning Engineer',
+                    'Data Engineer',
+                    'Prompt Engineer',
+                    'Devops Engineer',
+                    'Automation Engineer',
+                    'Multidisciplinary Prompt Engineer',
+                    'Datacenter Product Development Engineer',
+                    'Compiler Engineer', 'Malware Research Engineer',
+                    'Generative  Engineer', 'Quality Assurance Engineer',
+                    'Founding Engineer',
+                    'Cyber Systems Engineer',
+                    'Engineer Ii',
+                    'Head Of Engineering',
+                    'Embedded  Engineer', '
+                    Azure Support Engineer',
+                    'Developer Engineer In Test'
+                ]
             ],
             'Content'          => [
-                'Copywriter', 'Content Creator', 'Content Lead', 'Content Strategist', 'Video Editor', 'Data Annotator', 'Copywriter Estrategista', 'Content Writer And Editor', 'Data Journalist', 'Tekstschrijver', 'Content Writer'
+                'groupName'     => 'Content',
+                'searchKeyword' => [
+                    'Content',
+                    'Copywriter',
+                    'Creator',
+                    'Editor',
+                    'Annotator',
+                    'Writer',
+                    'Journalist',
+                    'Tekstschrijver',
+                    'Data',
+                ],
+                'jobTitles'     => [
+                    'Copywriter',
+                    'Content Creator',
+                    'Content Lead',
+                    'Content Strategist',
+                    'Video Editor',
+                    'Data Annotator',
+                    'Copywriter Estrategista',
+                    'Content Writer And Editor',
+                    'Data Journalist',
+                    'Tekstschrijver',
+                    'Content Writer']
+
             ],
             'Developer'        => [
-                'Developer',
-                'Tech Lead'
+                'groupName'     => 'Developer',
+                'searchKeyword' => [
+                    'Developer',
+                    'Front-end',
+                    'Frontend',
+                    'Full stack',
+                    'Full-stack',
+                    'Back-end',
+                    'Backend',
+                    'Tech lead'
+                ],
+                'jobTitles'     => [
+                    'Chat GPT Developer',
+                    'Backend Developer',
+                    'Azure AI & ML Developer',
+                    'Automation Developer',
+                    'Full Stack Web Developer',
+                    'No-Code Developer',
+                    'Junior flutter developer',
+                    'Website Developer',
+                    '...'
+                ]
             ],
-            'Data Scientist'   => ['Data Scientist'],
             'Recruiter'        => [
-                'Technical Recruiter Internship',
-                'Recruiter',
-                'Hr  Automation Strategy And Delivery Leader'
+                'groupName'     => 'Developer',
+                'searchKeyword' => [
+                    'Recruiter'
+                ],
+                'jobTitles'     => [
+                    'Technical Recruiter Internship',
+                    'Recruiter',
+                    'Hr  Automation Strategy And Delivery Leader'
+                ]
             ],
             'Specialist'       => [
-                'Seo Specialist', 'Digital Marketing Specialist', 'Content Specialist', 'Marketing Specialist', 'Content Marketing Specialist', 'It Specialist', 'Informatiespecialist', 'Social Media Specialist', 'Digital Content And Storytelling Specialist', 'Technical Support Specialist', 'Redator Especialista', 'Marketing Communications Specialist', 'Generation Specialist', 'B2b Marketing Specialist', 'Technical Seo Specialist'
+                'groupName'     => 'Specialist',
+                'searchKeyword' => [
+                    'Specialist'
+                ],
+                'jobTitles'     => [
+                    'Seo Specialist',
+                    'Digital Marketing Specialist',
+                    'Content Specialist',
+                    'Marketing Specialist',
+                    'Content Marketing Specialist',
+                    'It Specialist',
+                    'Informatiespecialist',
+                    'Social Media Specialist',
+                    'Digital Content And Storytelling Specialist',
+                    'Technical Support Specialist',
+                    'Redator Especialista',
+                    'Marketing Communications Specialist',
+                    'Generation Specialist',
+                    'B2b Marketing Specialist',
+                    'Technical Seo Specialist'
+                ]
             ],
             'Executive'        => [
-                'Digital Marketing Executive', 'Enterprise Account Executive', 'Marketing Executive', 'Sales Executive', 'Account Executive', 'Business Development Executive', 'Seo Executive', 'Member Relationship Executive',
+                'groupName'     => 'Executive',
+                'searchKeyword' => [
+                    'Executive'
+                ],
+                'jobTitles'     => [
+                    'Digital Marketing Executive',
+                    'Enterprise Account Executive',
+                    'Marketing Executive',
+                    'Sales Executive',
+                    'Account Executive',
+                    'Business Development Executive',
+                    'Seo Executive',
+                    'Member Relationship Executive',
+                ]
             ],
             'Manager'          => [
-                'Marketing Manager', 'Product Manager', 'Content Manager', 'Business Development Manager', 'Product Marketing Manager', 'Digital Marketing Manager', 'Responsible  Assessment Program Manager', 'Social Media Manager', 'Account Manager', 'Content Marketing Manager', 'Community Manager', 'Customer Success Manager', 'Seo Manager', 'Product Owner', 'It Project Manager', 'Project Manager', 'Mgr Marketing Bu Nx', 'Bid Manager', 'Technical Project Manager', 'Head Of Smm And Content Marketing', 'Technical Seo Manager', 'Program Manager', 'Ecommerce Manager', 'Business Developer'
+                'groupName'     => 'Manager',
+                'searchKeyword' => [
+                    'Manager',
+                    'mgr',
+                    'head of',
+                ],
+                'jobTitles'     => [
+                    'Marketing Manager',
+                    'Product Manager',
+                    'Content Manager',
+                    'Business Development Manager',
+                    'Product Marketing Manager',
+                    'Digital Marketing Manager',
+                    'Responsible Assessment Program Manager',
+                    'Social Media Manager',
+                    'Account Manager',
+                    'Content Marketing Manager',
+                    'Community Manager',
+                    'Customer Success Manager',
+                    'Seo Manager', 'Product Owner',
+                    'It Project Manager',
+                    'Project Manager',
+                    'Mgr Marketing Bu Nx',
+                    'Bid Manager',
+                    'Technical Project Manager',
+                    'Head Of Smm And Content Marketing',
+                    'Technical Seo Manager',
+                    'Program Manager',
+                    'Ecommerce Manager',
+                    'Business Developer'
+                ]
             ],
             'Expert'           => [
-                'Chatgpt 4 Expert',
-                'Expert In Sling Trips'
+                'groupName'     => 'Expert',
+                'searchKeyword' => [
+                    'Expert'
+                ],
+                'jobTitles'     => [
+                    'Chatgpt 4 Expert',
+                    'Expert In Sling Trips'
+                ]
             ],
             'Designer'         => [
-                'Graphic Designer', 'Instructional Designer', 'Content Designer', 'Product Designer'
+                'groupName'     => 'Designer',
+                'searchKeyword' => [
+                    'Designer'
+                ],
+                'jobTitles'     => ['Graphic Designer',
+                                    'Instructional Designer',
+                                    'Content Designer',
+                                    'Product Designer'
+                ]
             ],
             'Coordinator'      => [
-                'Performance Marketing Coordinator',
-                'Marketing Coordinator'
+                'groupName'     => 'Coordinator',
+                'searchKeyword' => [
+                    'Coordinator'
+                ],
+                'jobTitles'     => [
+                    'Performance Marketing Coordinator',
+                    'Marketing Coordinator'
+                ]
             ],
             'Architect'        => [
-                'Architect',
-                'Solution Architect Lead',
+                'groupName'     => 'Architect',
+                'searchKeyword' => [
+                    'Architect'
+                ],
+                'jobTitles'     => [
+                    'Architect',
+                    'Solution Architect Lead',
+                ]
             ],
             'Analyst'          => [
-                'Business Analyst', 'Data Analyst', 'Data Management Analyst', 'Technology Analyst', 'Research Analyst', 'Analista De Inbound Marketing', 'Seo Analyst'
+                'groupName'     => 'Analyst',
+                'searchKeyword' => [
+                    'Analyst'
+                ],
+                'jobTitles'     => [
+                    'Business Analyst',
+                    'Data Analyst',
+                    'Data Management Analyst',
+                    'Technology Analyst',
+                    'Research Analyst',
+                    'Analista De Inbound Marketing',
+                    'Seo Analyst'
+                ]
             ],
             'Assistant'        => [
-                'Executive Assistant', 'Administrative Assistant', 'Marketing Assistant', 'Digital Marketing Assistant', 'Architectural Executive Assistant', 'Multilingual Executive Assistant'
+                'groupName'     => 'Assistant',
+                'searchKeyword' => [
+                    'Assistant'
+                ],
+                'jobTitles'     => [
+                    'Executive Assistant',
+                    'Administrative Assistant',
+                    'Marketing Assistant',
+                    'Digital Marketing Assistant',
+                    'Architectural Executive Assistant',
+                    'Multilingual Executive Assistant']
             ],
             'Representative'   => [
-                'Customer Care Representative', 'Account Development Representative', 'Business Development Representative'
+                'groupName'     => 'Representative',
+                'searchKeyword' => [
+                    'Representative'
+                ],
+                'jobTitles'     => [
+                    'Customer Care Representative',
+                    'Account Development Representative',
+                    'Business Development Representative'
+                ]
             ],
             'Marketer'         => [
-                'Content Marketeer', 'Digital Marketer', 'Content Marketer', 'Online Content Marketeer', 'Linkedin Marketer', 'Director Of Marketing'
+                'groupName'     => 'Marketer',
+                'searchKeyword' => [
+                    'Marketer'
+                ],
+                'jobTitles'     => [
+                    'Content Marketeer',
+                    'Digital Marketer',
+                    'Content Marketer',
+                    'Online Content Marketeer',
+                    'Linkedin Marketer',
+                    'Director Of Marketing'
+                ]
             ],
             'Director'         => [
-                'Director Of Editorial Content', 'Group Finance Director', 'Director Of Finance', 'Affiliates Account Director'
+                'groupName'     => 'Director',
+                'searchKeyword' => [
+                    'Director'
+                ],
+                'jobTitles'     => [
+                    'Director Of Editorial Content',
+                    'Group Finance Director',
+                    'Director Of Finance',
+                    'Affiliates Account Director']
             ],
             'Associate'        => [
-                'Marketing Associate', 'Business Development Associate'
+                'groupName'     => 'Associate',
+                'searchKeyword' => [
+                    'Associate'
+                ],
+                'jobTitles'     => [
+                    'Marketing Associate',
+                    'Business Development Associate'
+                ]
             ],
-            'Officer'          => ['Chief Technology Officer'],
-            'Intern'           => ['Digital Marketing Intern', 'Recruitment Internship', 'Marketing Intern', 'Content Writer Intern'],
-            'Scientist'        => ['Staff Data Scientist'],
-            'Customer service' => ['Customer Service Fashion German'],
-            'Consultant'       => ['Management Consultant'],
-            'Researcher'       => ['Researcher'],
-            'QA'               => ['Vacature Functioneel Tester Magento 2'],
-            'Other'            => ['Stage Transition Industrielle', 'Adjunct Trner']
+            'Officer'          => [
+                'groupName'     => 'Officer',
+                'searchKeyword' => [
+                    'Officer'
+                ],
+                'jobTitles'     => [
+                    'Chief Technology Officer'
+                ]
+            ],
+            'Intern'           => [
+                'groupName'     => 'Intern',
+                'searchKeyword' => [
+                    'Intern'
+                ],
+                'jobTitles'     => [
+                    'Digital Marketing Intern',
+                    'Recruitment Internship',
+                    'Marketing Intern',
+                    'Content Writer Intern'
+                ]
+            ],
+            'Customer service' => [
+                'groupName'     => 'Customer service',
+                'searchKeyword' => [
+                    'Customer service'
+                ],
+                'jobTitles'     => ['Customer Service Fashion German']
+            ],
+            'Consultant'       => [
+                'groupName'     => 'Consultant',
+                'searchKeyword' => [
+                    'Consultant'
+                ],
+                'jobTitles'     => ['Management Consultant']
+            ],
+            'Researcher'       => [
+                'groupName'     => 'Researcher',
+                'searchKeyword' => [
+                    'Researcher'
+                ],
+                'jobTitles'     => ['Researcher']
+            ],
+            'QA'               => [
+                'groupName'     => 'Intern',
+                'searchKeyword' => [
+                    'QA',
+                    'Tester',
+                    'Quality',
+                    'Assurance'
+                ],
+                'jobTitles'     => [
+                    'Vacature Functioneel Tester Magento 2'
+                ]
+            ],
         ];
     }
 }

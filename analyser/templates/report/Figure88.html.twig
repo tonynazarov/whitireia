@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}{{title}}{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block body %}
     <div class="row">
@@ -9,7 +9,7 @@
 
             <script>
                 let options = {{ options|raw }};
-                let chart = new ApexCharts(document.querySelector("#chart"), options);
+                let chart = new ApexCharts(document.querySelector("#chart"));
                 chart.render();
             </script>
         </div>
@@ -33,7 +33,6 @@
                 </tbody>
             </table>
         </div>
-
     </div>
 {% endblock %}
 

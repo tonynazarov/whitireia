@@ -8,7 +8,7 @@ readonly class Figure88 extends Figure
 {
     protected function getTitle(): string
     {
-        return 'Figure 88. The comparison of the number of users mentioned ChatGPT skill in their profile and the number of jobs related to ChatGPT on the Upwork.';
+        return 'Figure 88. The Comparison of the Number of Users Mentioned ChatGPT Skill in Their Profile and the Number of Jobs Related to ChatGPT on the Upwork.';
     }
 
     protected function getSql(): string

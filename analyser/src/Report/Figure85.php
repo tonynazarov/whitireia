@@ -10,7 +10,7 @@ readonly class Figure85 extends Figure
 {
     protected function getTitle(): string
     {
-        return 'Figure 85. Distribution of professional areas for titles.';
+        return 'Figure 85. Distribution of Vacancies Across the Professional Areas Having Greater Than Three Mentions.';
     }
 
     protected function getSql(): string
